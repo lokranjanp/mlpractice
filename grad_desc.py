@@ -69,5 +69,3 @@ w_final, b_final, J_hist, p_hist = gradient_descent(x_train, y_train, w_init, b_
 
 print(f"(w,b) found by gradient descent : ({w_final:8.4f},{b_final:8.4f})")
 
-print("Hello loki")
-
