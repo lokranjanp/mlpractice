@@ -1,7 +1,6 @@
-import numpy as np
-from sklearn.linear_model import SGDRegressor
 from sklearn.preprocessing import StandardScaler
-import matplotlib.pyplot as plt
+from sklearn.linear_model import SGDRegressor
+import numpy as np
 
 def load_house_data():
     data = np.loadtxt("houses.txt", delimiter=',', skiprows=1)
@@ -38,7 +37,7 @@ print(f"Model parameters : w : {w_norm}, b : {b_norm}")
 y_pred_sgd = sgdr.predict(x_norm)
 y_pred = np.dot(x_norm, w_norm)+b_norm
 
-print(f"prediction using np.dot and sgdr.predict match : {(y_pred == y_pred_sgd).all()}")
+print(f"prediction using np.dot and sgdr predict match : {(y_pred == y_pred_sgd).all()}")
 
 print(f"Prediction on training set : \n{y_pred[:4]}")
 print(f"Target values : \n{y_train[:4]}")

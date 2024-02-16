@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib as plt
 import math, copy
 
 x_train = np.array([1.0, 2.0])

@@ -1,10 +1,8 @@
 import numpy as np
 import time
-
 # allocates memory to the numpy array "a" and fills the values as zero.
 a = np.zeros(4)
 print(f"np.zeros(4) : a = {a}, a shape = {a.shape}, a data type = {a.dtype}")
-
 
 # to fill in random values into the numpy array :
 b = np.random.random_sample(5)
@@ -21,7 +19,6 @@ print(f"d = {d}")
 
 # creating numpy array with user specified values
 e = np.array([1, 2, 3, 4])
-
 
 # slicing of numpy arrays
 
@@ -63,7 +60,6 @@ toc = time.time()
 
 print(f"time taken : {1000*(toc - tic):.4f} ms")
 
-
 #   without vectorisation
 tic = time.time()
 t = my_dot(x,y)
@@ -72,3 +68,10 @@ toc = time.time()
 print(f"without vectorisation : {t}")
 print(f"time taken : {1000*(toc - tic):.4f} ms")
 
+def softmax(z):
+    exp_z = np.exp(z - np.max(z))  # Subtracting max(z) for numerical stability
+    return exp_z / np.sum(exp_z, axis=0)
+
+input_vector = np.array([2.0, 1.0, 0.1])
+softmax_output = softmax(input_vector)
+print("Softmax Output:", softmax_output)
